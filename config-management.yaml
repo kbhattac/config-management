@@ -11,7 +11,7 @@ spec:
     syncRepo: git@github.com:kbhattac/config-management.git
     syncBranch: master
     secretType: none
-    policyDir: "corp"
+    policyDir: corp
   configConnector:
     enabled: true
   policyController:
