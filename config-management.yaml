@@ -14,3 +14,5 @@ spec:
     policyDir: "corp"
   configConnector:
     enabled: true
+  policyController:
+    enabled: true
