@@ -13,6 +13,6 @@ spec:
     secretType: none
     policyDir: corp
   configConnector:
-    enabled: true
+    enabled: false
   policyController:
     enabled: true
