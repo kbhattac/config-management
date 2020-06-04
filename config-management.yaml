@@ -12,3 +12,5 @@ spec:
     syncBranch: master
     secretType: none
     policyDir: "corp"
+  configConnector:
+    enabled: true
