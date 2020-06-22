@@ -4,8 +4,7 @@ metadata:
   name: journalbeat-dynamic
   namespace: metrics
   labels:
-    app: journalbeat-dynamic
-    kubernetes.io/cluster-service: "true"
+    k8s-app: journalbeat-dynamic
 spec:
   selector:
     matchLabels:
@@ -13,8 +12,7 @@ spec:
   template:
     metadata:
       labels:
-        app: journalbeat-dynamic
-        kubernetes.io/cluster-service: "true"
+        k8s-app: journalbeat-dynamic
     spec:
       serviceAccountName: journalbeat-dynamic
       terminationGracePeriodSeconds: 30

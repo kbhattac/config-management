@@ -5,7 +5,6 @@ metadata:
   namespace: metrics
   labels:
     k8s-app: journalbeat-dynamic
-    kubernetes.io/cluster-service: "true"
 data:
   journalbeat.yml: |-
     journalbeat.inputs:
