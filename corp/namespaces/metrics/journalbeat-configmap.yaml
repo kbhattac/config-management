@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: journalbeat-dynamic-config
+  namespace: metrics
+  labels:
+    k8s-app: journalbeat-dynamic
+    kubernetes.io/cluster-service: "true"
+data:
+  journalbeat.yml: |-
+    journalbeat.inputs:
+    - paths: ["/var/log/journal"]
+      seek: cursor
+    processors:
+    - add_cloud_metadata: ~
+    - add_kubernetes_metadata:
+        in_cluster: true
+        default_indexers.enabled: false
+        default_matchers.enabled: false
+        indexers:
+          - container:
+        matchers:
+          - fields:
+              lookup_fields: ["container.id"]
+    output.elasticsearch:
+      hosts: ['${ELASTICSEARCH_HOST:172.16.141.51}:${ELASTICSEARCH_PORT:9200}']
+      ilm.enabled: true

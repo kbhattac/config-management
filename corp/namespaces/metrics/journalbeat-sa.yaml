@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: journalbeat-dynamic
+  namespace: metrics
+  labels:
+    k8s-app: journalbeat-dynamic
