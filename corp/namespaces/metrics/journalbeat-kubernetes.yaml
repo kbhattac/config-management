@@ -8,7 +8,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      name: journalbeat-dynamic
+      k8s-app: journalbeat-dynamic
   template:
     metadata:
       labels:
