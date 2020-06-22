@@ -1,0 +1,12 @@
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: ClusterRoleBinding
+metadata:
+  name: journalbeat-dynamic
+subjects:
+  - kind: ServiceAccount
+    name: journalbeat-dynamic
+    namespace: metrics
+roleRef:
+  kind: ClusterRole
+  name: journalbeat-dynamic
+  apiGroup: rbac.authorization.k8s.io

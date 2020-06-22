@@ -92,36 +92,6 @@ spec:
             path: /run/systemd
         - name: data
           emptyDir: {}
-
----
-apiVersion: rbac.authorization.k8s.io/v1beta1
-kind: ClusterRoleBinding
-metadata:
-  name: journalbeat-dynamic
-subjects:
-  - kind: ServiceAccount
-    name: journalbeat-dynamic
-    namespace: metrics
-roleRef:
-  kind: ClusterRole
-  name: journalbeat-dynamic
-  apiGroup: rbac.authorization.k8s.io
----
-apiVersion: rbac.authorization.k8s.io/v1beta1
-kind: ClusterRole
-metadata:
-  name: journalbeat-dynamic
-  labels:
-    k8s-app: journalbeat-dynamic
-rules:
-  - apiGroups: [""] # "" indicates the core API group
-    resources:
-      - namespaces
-      - pods
-    verbs:
-      - get
-      - watch
-      - list
 ---
 apiVersion: v1
 kind: ServiceAccount
