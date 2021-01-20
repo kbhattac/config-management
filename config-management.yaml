@@ -6,7 +6,7 @@ metadata:
   name: config-management
 spec:
   # clusterName is required and must be unique among all managed clusters
-  clusterName: usercluster1
+  clusterName: snuc
   git:
     syncRepo: https://github.com/kbhattac/config-management.git
     syncBranch: master
